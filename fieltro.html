@@ -1,0 +1,139 @@
+
+<html>
+<head>
+  <link rel="stylesheet" href="./styles-fieltro.css">
+    <meta name="theme-color" content="#000000">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+  <title>ContaTruco</title>
+<style>
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 44px;
+	background-image: url("./navbar.png");
+	border-bottom: 1px solid #473a21;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    z-index: 9999;
+    text-shadow: 0 -1px 0 rgba(54, 44, 28, 0.5);
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+}
+.coolbutton {
+	background-color: #7F5E39;
+	border: 1px solid #3F311C;
+	border-radius: 5px;
+	color: rgb(0, 0, 0);
+	padding: 15px 10%;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	cursor: pointer;
+	position: relative;
+	color:white
+}
+.coolbutton:active {
+	background-color: #6B4E30;
+}
+p {
+	color:white
+}
+label {
+  color:white
+}
+</style>
+<script type="text/javascript">
+function setupStandaloneLinks() {
+  var links = document.getElementsByTagName("a");
+
+  for (var i = 0; i < links.length; i++) {
+    (function(link) {
+      link.onclick = function(e) {
+        var href = link.getAttribute("href");
+
+        if (!href || link.className.indexOf("external") !== -1) {
+          return true; 
+        }
+
+        window.location = href;
+        return false;
+      };
+    })(links[i]);
+  }
+}
+
+window.onload = setupStandaloneLinks;
+</script>
+</head>
+<body class="pinstripe" style="overflow-x:hidden;">
+    <div class="navbar">ContaTruco</div>
+	<label>⠀</label>
+	<div></div>
+	<label>⠀</label>
+	<panel>
+		<label style="position: relative;font-size: 80%;">hecho por onionjumoke</label>
+		<fieldset>
+			<div>
+				<button class="coolbutton" id="add1">Nos</button>
+				<button class="coolbutton" style="left:33.5%" id="add2">Ellos</button>
+			</div>
+			<div>
+				<p id="text1">0</p>
+				<p id="text2">0</p>
+			</div>
+			<div>
+				<button class="coolbutton" id="sub1">-1 Nos</button>
+				<button class="coolbutton" style="left:19%;" id="sub2">-1 Ellos</button>
+			</div>
+		</fieldset>
+		<fieldset>
+      <a href="./index.html">
+        <img src="./madera.png" class="icon">
+			  <div>
+					<div>
+            <label style="font-size: 90%;">Fondo con madera</label>
+          </div>
+			  </div>
+      </a>
+		</fieldset>
+    <label style="font-size: 90%">(Al cambiar de fondo perdes los puntos.)</label>
+	</panel>
+  <script>
+    let count1 = 0;
+    let count2 = 0;
+
+    const text1 = document.getElementById('text1');
+    const text2 = document.getElementById('text2');
+
+    document.getElementById('add1').addEventListener('click', () => {
+      count1++;
+      text1.textContent = count1;
+    });
+
+    document.getElementById('sub1').addEventListener('click', () => {
+      count1--;
+      text1.textContent = count1;
+    });
+
+    document.getElementById('add2').addEventListener('click', () => {
+      count2++;
+      text2.textContent = count2;
+    });
+
+    document.getElementById('sub2').addEventListener('click', () => {
+      count2--;
+      text2.textContent = count2;
+    });
+  </script>
+</body>	
+</html>
